@@ -1,0 +1,31 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	mc:Ignorable="d"
+	x:Class="DiakTanyaSystem.Rendelesfelvetel"
+	d:DesignWidth="800" d:DesignHeight="200">
+    <Grid x:Name="mainMenuLayoutRoot" Background="Black">
+        
+           <ScrollViewer x:Name="ScrollViewer" Background="Black" Margin="0,0,0,130">
+            <StackPanel x:Name="stackPanel">
+                
+                <WrapPanel x:Name="mainWrapPanel">
+                    
+                </WrapPanel>
+                <StackPanel x:Name="stackPanel2">
+                    
+                </StackPanel>
+                <WrapPanel x:Name="WrapPanel2" >
+                </WrapPanel>
+            </StackPanel>
+           </ScrollViewer>
+            
+            <StackPanel VerticalAlignment="Bottom">
+
+            <TextBlock x:Name="currentOrder" Height="30" Foreground="White" VerticalAlignment="Bottom" FontSize="22"/>
+            <ListBox x:Name="listBox" Height="100"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

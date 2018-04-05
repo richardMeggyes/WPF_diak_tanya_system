@@ -1,0 +1,73 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	mc:Ignorable="d"
+	x:Class="DiakTanyaSystem.Settings"
+	d:DesignWidth="800" d:DesignHeight="1600">
+    <UserControl.Resources>
+        <Storyboard x:Key="loginMouseEnter"/>
+        <Storyboard x:Key="registerMouseEnter"/>
+        <Storyboard x:Key="loginMouseLeave"/>
+        <Storyboard x:Key="registerMouseLeave"/>
+    </UserControl.Resources>
+    <Grid x:Name="mainMenuLayoutRoot" Background="Black">
+        <ScrollViewer x:Name="ScrollViewer" Margin="0,0,0,30">
+            <StackPanel>
+                
+            
+            <StackPanel >
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Beállítások" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+                        <TextBlock HorizontalAlignment="Left" Margin="0,5,0,0" TextWrapping="Wrap" Text="Adatbázis kezelés" FontWeight="Bold" FontSize="14" VerticalAlignment="Top" Foreground="White"/>
+                    
+                    <TextBlock x:Name="tableInfoTB" HorizontalAlignment="Left" Margin="0,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"/>
+                        <WrapPanel x:Name="RadioButtonWrapPanel">
+
+                    </WrapPanel>
+                        <WrapPanel x:Name="textBoxWrapPanel">
+                            
+                        </WrapPanel>
+                    </StackPanel>
+
+                <StackPanel Margin="0,5,0,5">
+                        <WrapPanel Margin="0,0,0,5">
+                        <Button x:Name="newPizza" Content="Új sor felvétele" Width="110" HorizontalAlignment="Left" Click="newPizza_Click"/>
+                        <Button x:Name="editPizza" Content="Kiválasztott sor szerkesztése" Width="170" HorizontalAlignment="Left" Click="editPizza_Click"/>
+                            <Button x:Name="deletePizzak" Content="Kiválasztott sor törlése" Width="140" HorizontalAlignment="Left" Click="deletePizzak_Click"/>
+                        </WrapPanel>
+                        <TextBox x:Name="itemTextBox" KeyDown="newLineKeyDown" Height="23" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="PizzakList" FontWeight="Bold" FontSize="15" Margin="0,10,0,0" TextWrapping="Wrap" Text="Adattábla tartalma" Foreground="White"/>
+                    <ListBox x:Name="pizzaListBox" SelectionChanged="selectedPizza" Height="100" Background="Black" Foreground="White"/>
+                </StackPanel>
+                <WrapPanel>
+                        <Button x:Name="readPizzak" Content="Lista frissítés" Width="140" HorizontalAlignment="Left" Click="readPizzak_Click"/>
+                    </WrapPanel>
+                <WrapPanel Margin="0,20,0,0">
+                        <TextBlock Text="Felület méret (alap=1.5) Érték: " FontWeight="Bold" FontSize="15" Foreground="White" />
+                        <TextBlock Text="{Binding ElementName=UIScaleSlider,Path=Value}" Foreground="White" VerticalAlignment="Center"/>
+                    </WrapPanel>
+                    <StackPanel>
+                        <Slider x:Name="UIScaleSlider" Minimum="0.8" Maximum="4"
+                                IsSnapToTickEnabled="True"
+                                TickFrequency="0.1" ValueChanged="UIScaleSliderValueChanged"/>
+                    </StackPanel>
+                    <StackPanel Margin="0,20,0,0">
+                        <CheckBox x:Name="autoMAximize" Content="Ablak utomatikus maximalizálása indításnál" FontWeight="Bold" FontSize="15" Foreground="White" Checked="autoMAximize_Checked" Unchecked="autoMAximize_Unchecked"/>
+                        <CheckBox x:Name="noUnderDefPrice" Content="A Pizza ára ne menjen minuszolásnál az alapár alá" FontWeight="Bold" FontSize="15" Foreground="White" Checked="noUnderDefPrice_Checked" Unchecked="noUnderDefPrice_Unchecked"/>
+                        <CheckBox x:Name="noMinusPrice" Content="A pizza ára ne csökkenjen minuszolásnál" FontWeight="Bold" FontSize="15" Foreground="White" Checked="noMinusPrice_Checked" Unchecked="noMinusPrice_Unchecked"/>
+                    </StackPanel>
+
+
+                </StackPanel>
+                
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel VerticalAlignment="Bottom">
+            <TextBlock x:Name="statusTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="White" FontSize="14"/>
+      
+        </StackPanel>
+            
+    </Grid>
+</UserControl>

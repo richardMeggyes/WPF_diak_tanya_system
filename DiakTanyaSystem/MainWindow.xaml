@@ -1,0 +1,21 @@
+﻿<Window x:Class="DiakTanyaSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiakTanyaSystem"
+        mc:Ignorable="d"
+         xmlns:HamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"
+        Title="Diák Tanya - Kaposvári Egyetem" Height="480" Width="800">
+    <Grid>
+        <Frame x:Name="mainFrame" Margin="50,0,0,0"/>
+        <HamburgerMenu:HamburgerMenu Grid.Column="0" MaxWidth="200" Background="#FF232323" MenuIconColor="White" SelectionIndicatorColor="White" MenuItemForeground="White" HorizontalAlignment="Left">
+            <HamburgerMenu:HamburgerMenuItem  Text="Home" SelectionCommand="{Binding ElementName=this_}"/>
+            <HamburgerMenu:HamburgerMenuItem  Text="Rendelésfelvétel" Icon="Assets/pizza.png" Selected="searchselected" />
+            <HamburgerMenu:HamburgerMenuItem  Text="Rendelések" Icon="Assets/purchase_icon.png" Selected="ordersSelected"/>
+            <HamburgerMenu:HamburgerMenuItem  Text="Lists"/>
+            <HamburgerMenu:HamburgerMenuItem  Text="Beállítások" Icon="Assets/settings.png" Selected="settingsSelected"/>
+        </HamburgerMenu:HamburgerMenu>
+
+    </Grid>
+</Window>
